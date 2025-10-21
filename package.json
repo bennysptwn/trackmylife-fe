@@ -10,6 +10,7 @@
     "serve:ssr:trackmylife-fe": "node dist/trackmylife-fe/server/server.mjs"
   },
   "private": true,
+  "type": "module",
   "dependencies": {
     "@angular/common": "^20.0.0",
     "@angular/compiler": "^20.0.0",

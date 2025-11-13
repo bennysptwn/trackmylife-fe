@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 
 @Component({
@@ -9,9 +9,11 @@ import { RouterLink } from '@angular/router';
       class="bg-white hover:bg-[#E9EBEF] border border-[#E9EBEF] rounded-md p-1 hover:shadow-md flex flex-row text-[12px] justify-center"
       routerLink="/"
     >
-      button works!
+      {{ title() }}
     </a>
   `,
   styles: ``,
 })
-export class Button {}
+export class Button {
+  title = input.required<string>();
+}

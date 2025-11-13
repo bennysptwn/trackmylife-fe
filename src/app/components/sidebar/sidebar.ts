@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, input } from '@angular/core';
 import { SidebarItem } from '../sidebar-item/sidebar-item';
 import { MenuModel } from '../../models/menu.model';
 import { Button } from '../button/button';
@@ -31,13 +31,15 @@ import { Button } from '../button/button';
       <div class="flex flex-col gap-3">
         <p class="text-[14px]">Welcome back</p>
         <p class="font-bold">Benny Septiawan Salim</p>
-        <app-button />
+        <app-button title="Log out" />
       </div>
     </div>
   `,
   styles: ``,
 })
 export class Sidebar {
+  isExpanded = input<boolean>(false);
+
   menuData: MenuModel[] = [
     {
       title: 'Dashboard',

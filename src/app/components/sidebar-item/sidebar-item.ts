@@ -11,7 +11,7 @@ import { RouterLink } from '@angular/router';
       }} hover:bg-[#E9EBEF] text-[#717182] hover:text-black rounded-xl hover:shadow-sm flex flex-row gap-3 items-center"
       routerLink="/"
     >
-      <img src="{{ iconSrc() }}" class="w-4 h-4 " />
+      <img src="{{ iconSrc() }}" class="w-4 h-4" />
       <div>{{ title() }}</div>
     </a>
   `,

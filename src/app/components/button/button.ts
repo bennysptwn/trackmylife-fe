@@ -6,7 +6,11 @@ import { RouterLink } from '@angular/router';
   imports: [RouterLink],
   template: `
     <a
-      class="bg-white hover:bg-[#E9EBEF] border border-[#E9EBEF] rounded-md p-1 hover:shadow-md flex flex-row text-[12px] justify-center"
+      class="hover:bg-[#E9EBEF] {{
+        isBorder() ? 'border border-[#E9EBEF]' : ''
+      }}  rounded-md p-1 hover:shadow-md flex flex-row text-[{{
+        isLargeBtn() ? '22px' : '12px'
+      }}] justify-center"
       routerLink="/"
     >
       {{ title() }}
@@ -16,4 +20,6 @@ import { RouterLink } from '@angular/router';
 })
 export class Button {
   title = input.required<string>();
+  isLargeBtn = input<boolean>(true);
+  isBorder = input<boolean>(true);
 }

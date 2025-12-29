@@ -1,10 +1,10 @@
 <div class="flex flex-col gap-2">
   <app-header></app-header>
 
-  <div class="max-w-full px-8 lg:px-24 py-12 flex flex-col gap-5">
+  <div class="max-w-full py-8 flex flex-col gap-10">
     <!-- section 1 -->
     <section
-      class="flex flex-col lg:flex-row justify-between items-center gap-10"
+      class="flex flex-col px-8 lg:px-24 lg:flex-row justify-between items-center gap-10"
     >
       <div class="flex flex-col gap-6 lg:max-w-1/2">
         <div><p>All in-One life management</p></div>
@@ -29,11 +29,52 @@
       <div class="flex flex-col w-full justify-center">
         <img
           src="setup.jpg"
-          class="h-130 lg:h-180 md:h-150 rounded-lg shadow-lg object-cover"
+          class="h-90 lg:h-180 md:h-150 rounded-lg shadow-lg object-cover"
         />
       </div>
     </section>
     <!-- section stats -->
-    <section class=""></section>
+    <section
+      class="grid grid-cols-2 lg:grid-cols-4 justify-center gap-10 bg-[#F9F9FA] p-8 border-y-2 border-[#E0E0E0] overflow-hidden"
+    >
+      @for (item of [{title: '50K+', subtitle: 'Active Users'}, { title: '1M',
+      subtitle: 'Task Completed'},{title: '98%', subtitle: 'Satisfaction Rate'},
+      {title: '4.9/5', subtitle: 'App Rating'}]; track $index) {
+      <div class="flex flex-col items-center gap-2">
+        <p class="font-medium">{{item.title}}</p>
+        <p>{{item.subtitle}}</p>
+      </div>
+      }
+    </section>
+    <!-- section feature -->
+    <section class="px-8 lg:px-28 flex flex-col gap-6">
+      <div class="flex flex-col gap-2 text-center">
+        <p class="font-bold text-xl">Everything You Need in One Place</p>
+        <p>
+          Four powerful modules working together to help you achieve balance and
+          success
+        </p>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 overflow-hidden gap-10">
+        @for (item of sectionFeature; track $index) {
+        <div
+          class="flex flex-col items-start gap-4 p-6 rounded-xl bg-white shadow-sm hover:shadow-xl transition-all duration-300 border-t-4"
+          [class]="item.borderColor"
+        >
+          <div
+            class="p-3 rounded-xl w-fit"
+            [class]="item.iconBg + ' ' + item.iconColor"
+            [innerHTML]="sanitizer.bypassSecurityTrustHtml(item.icon)"
+          ></div>
+          <div class="flex flex-col gap-2">
+            <p class="font-bold text-md">{{item.title}}</p>
+            <p class="text-gray-600 leading-relaxed text-sm">
+              {{item.description}}
+            </p>
+          </div>
+        </div>
+        }
+      </div>
+    </section>
   </div>
 </div>

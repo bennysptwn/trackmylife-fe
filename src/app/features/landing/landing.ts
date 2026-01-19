@@ -1,7 +1,11 @@
 import { Component, inject } from '@angular/core';
 import { Header } from '../../components/header/header';
 import { Button } from '../../components/button/button';
-import { sectionFeature } from './landing.data';
+import {
+  sectionFeature,
+  sectionStats,
+  sectionUserReview,
+} from './landing.data';
 import { DomSanitizer } from '@angular/platform-browser';
 
 @Component({
@@ -11,6 +15,8 @@ import { DomSanitizer } from '@angular/platform-browser';
   //   styleUrl: './app.css',
 })
 export class Landing {
-  sectionFeature = sectionFeature;
+  protected readonly feature = sectionFeature;
+  protected readonly stats = sectionStats;
+  protected readonly userReview = sectionUserReview;
   sanitizer = inject(DomSanitizer);
 }

@@ -1,9 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
 @import "tailwindcss";
+@config "../tailwind.config.js";
 /* You can add global styles to this file, and also import other style files */
 
 body {
     margin: 0;
     font-family: "Manrope", sans-serif;
     font-optical-sizing: auto;
+    @apply transition-colors duration-300;
+    @apply dark:bg-[#0A0A0A] dark:text-[#f1f5f9];
 }

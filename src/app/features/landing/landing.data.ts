@@ -1,4 +1,25 @@
-export const sectionFeature = [
+import { FeatureItem, ReviewItem, StatItem } from './landing.model';
+
+export const sectionStats: StatItem[] = [
+  {
+    title: '50K+',
+    subtitle: 'Active Users',
+  },
+  {
+    title: '1M',
+    subtitle: 'Task Completed',
+  },
+  {
+    title: '98%',
+    subtitle: 'Satisfaction Rate',
+  },
+  {
+    title: '4.9/5',
+    subtitle: 'App Rating',
+  },
+];
+
+export const sectionFeature: FeatureItem[] = [
   {
     title: 'Time Management',
     description:
@@ -42,5 +63,29 @@ export const sectionFeature = [
     icon: `<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
   <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18 9 11.25l4.306 4.306a11.95 11.95 0 0 1 5.814-5.518l2.74-1.22m0 0-5.94-2.281m5.94 2.28-2.28 5.941" />
 </svg>`,
+  },
+];
+
+export const sectionUserReview: ReviewItem[] = [
+  {
+    rating: '⭐⭐⭐⭐',
+    name: 'Muhamaad Naufal Abbiyu',
+    review:
+      'I have been using this app for a while now and it has been a game changer for me. I have been able to track my time and tasks with ease and it has helped me to be more productive.',
+  },
+  {
+    rating: '⭐⭐⭐⭐',
+    name: 'Rahmad Tobi',
+    review: "It's great app bro",
+  },
+  {
+    rating: '⭐⭐⭐⭐⭐',
+    name: 'Mustaqim Anwar',
+    review: 'Bener2 keren parah ini app njirr',
+  },
+  {
+    rating: '⭐⭐⭐⭐⭐',
+    name: 'Irfaan',
+    review: 'gacor sih, semua org harus pake',
   },
 ];

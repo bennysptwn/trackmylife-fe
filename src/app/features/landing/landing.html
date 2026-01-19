@@ -35,14 +35,14 @@
     </section>
     <!-- section stats -->
     <section
-      class="grid grid-cols-2 lg:grid-cols-4 justify-center gap-10 bg-[#F9F9FA] p-8 border-y-2 border-[#E0E0E0] overflow-hidden"
+      class="grid grid-cols-2 lg:grid-cols-4 justify-center gap-10 bg-[#F9F9FA] dark:bg-slate-900/50 p-8 border-y-2 border-[#E0E0E0] dark:border-slate-800 overflow-hidden"
     >
-      @for (item of [{title: '50K+', subtitle: 'Active Users'}, { title: '1M',
-      subtitle: 'Task Completed'},{title: '98%', subtitle: 'Satisfaction Rate'},
-      {title: '4.9/5', subtitle: 'App Rating'}]; track $index) {
+      @for (item of stats; track $index) {
       <div class="flex flex-col items-center gap-2">
-        <p class="font-medium">{{item.title}}</p>
-        <p>{{item.subtitle}}</p>
+        <p class="font-medium text-slate-900 dark:text-slate-100">
+          {{item.title}}
+        </p>
+        <p class="text-slate-600 dark:text-slate-400">{{item.subtitle}}</p>
       </div>
       }
     </section>
@@ -50,15 +50,15 @@
     <section class="px-8 lg:px-28 flex flex-col gap-6">
       <div class="flex flex-col gap-2 text-center">
         <p class="font-bold text-xl">Everything You Need in One Place</p>
-        <p>
+        <p class="text-slate-600 dark:text-slate-400">
           Four powerful modules working together to help you achieve balance and
           success
         </p>
       </div>
-      <div class="grid grid-cols-1 lg:grid-cols-2 overflow-hidden gap-10">
-        @for (item of sectionFeature; track $index) {
+      <div class="grid grid-cols-1 lg:grid-cols-2 overflow-hidden gap-2">
+        @for (item of feature; track $index) {
         <div
-          class="flex flex-col items-start gap-4 p-6 rounded-xl bg-white shadow-sm hover:shadow-xl transition-all duration-300 border-t-4"
+          class="flex flex-col items-start gap-4 p-6 rounded-xl bg-white dark:bg-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 border-t-4"
           [class]="item.borderColor"
         >
           <div
@@ -68,12 +68,44 @@
           ></div>
           <div class="flex flex-col gap-2">
             <p class="font-bold text-md">{{item.title}}</p>
-            <p class="text-gray-600 leading-relaxed text-sm">
+            <p class="text-gray-600 dark:text-gray-400 leading-relaxed text-sm">
               {{item.description}}
             </p>
           </div>
         </div>
         }
+      </div>
+    </section>
+    <!-- section user review -->
+    <section class="px-8 lg:px-28 flex flex-col gap-6">
+      <div class="flex flex-col gap-2 text-center">
+        <p class="font-bold text-xl">Loved by millions</p>
+        <p class="text-slate-600 dark:text-slate-400">
+          See what our users have to say about transforming their lives
+        </p>
+      </div>
+      <div class="grid grid-cols-1 lg:grid-cols-2 overflow-hidden gap-2">
+        @for (item of userReview; track $index) {
+        <div
+          class="flex flex-col gap-2 shadow-sm p-6 rounded-xl border border-[#E0E0E0] dark:border-slate-700 dark:bg-slate-800"
+        >
+          <p class="font-bold">{{item.name}}</p>
+          <p class="text-yellow-500">{{item.rating}}</p>
+          <p class="text-sm text-slate-600 dark:text-slate-300">
+            {{item.review}}
+          </p>
+        </div>
+        }
+      </div>
+    </section>
+    <!-- section build better life -->
+    <section class="px-8 lg:px-28 flex flex-col gap-6">
+      <div class="flex flex-col gap-2 text-center">
+        <p class="font-bold text-xl">Build a better life</p>
+        <p>
+          We've combined the best productivity methodologies with cutting-edge
+          technology to create the ultimate life management solution.
+        </p>
       </div>
     </section>
   </div>

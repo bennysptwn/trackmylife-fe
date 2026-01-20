@@ -7,10 +7,11 @@ import {
   sectionUserReview,
 } from './landing.data';
 import { DomSanitizer } from '@angular/platform-browser';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-landing',
-  imports: [Header, Button],
+  imports: [Header, Button, RouterLink],
   templateUrl: './landing.html',
   //   styleUrl: './app.css',
 })

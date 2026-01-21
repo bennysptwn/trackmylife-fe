@@ -1,9 +1,9 @@
 <div
-  class="min-h-screen w-full dark-bg-[#050505] flex items-center lg:flex-row gap-10 p-8"
+  class="max-h-screen w-full dark-bg-[#050505] flex items-center lg:flex-row lg:justify-between gap-10 lg:p-40 p-8"
 >
-  <div class="w-full">
+  <div class="w-full lg:w-1/2">
     <!-- Header -->
-    <div class="mb-8">
+    <div class="mb-8 flex flex-col gap-2">
       <a
         routerLink="/"
         class="inline-flex items-center text-sm text-neutral-400 hover:text-white transition-colors mb-6 group"
@@ -15,8 +15,8 @@
         />
         Back to Home
       </a>
-
-      <h1 class="text-2xl font-bold mb-1">Welcome Back</h1>
+      <img src="trackmylife-logo.png" class="w-30" />
+      <h1 class="text-2xl font-bold">Welcome Back</h1>
       <p class="text-neutral-400 text-sm">Log in to access your dashboard</p>
     </div>
 
@@ -60,6 +60,9 @@
   </div>
   <!-- background image -->
   <div class="hidden lg:block">
-    <img src="setup.jpg" class="rounded-lg shadow-lg object-cover" />
+    <img
+      src="setup.jpg"
+      class="rounded-lg shadow-lg p-10 object-cover max-h-screen overflow-hidden"
+    />
   </div>
 </div>

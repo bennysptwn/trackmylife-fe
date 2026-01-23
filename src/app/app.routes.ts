@@ -3,7 +3,7 @@ import { Landing } from './features/landing/landing';
 
 export const routes: Routes = [
   {
-    path: '',
+    path: 'landing',
     component: Landing,
     title: 'Track My Life',
   },
@@ -18,6 +18,6 @@ export const routes: Routes = [
   },
   {
     path: '**',
-    redirectTo: '',
+    redirectTo: 'landing',
   },
 ];

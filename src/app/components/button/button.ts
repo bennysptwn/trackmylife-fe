@@ -3,7 +3,6 @@ import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-button',
-  imports: [RouterLink],
   template: `
     <a
       class="items-center justify-center transition-all duration-300 active:scale-95 font-bold cursor-pointer whitespace-nowrap
@@ -14,7 +13,6 @@ import { RouterLink } from '@angular/router';
           ? 'bg-[#34A58A] text-white shadow-lg hover:shadow-green-500/30 hover:-translate-y-0.5 hover:bg-[#2d9179]'
           : 'bg-white text-slate-600 border border-slate-200 hover:border-slate-800 hover:text-slate-900 hover:bg-slate-50 dark:bg-slate-800 dark:text-slate-200 dark:border-slate-700 dark:hover:bg-slate-700 dark:hover:text-white'
       }}"
-      routerLink="/"
     >
       {{ title() }}
     </a>

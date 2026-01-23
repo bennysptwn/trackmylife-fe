@@ -24,6 +24,9 @@
     <form class="flex flex-col gap-5">
       <app-text-field title="Email" icon="mail" />
       <app-text-field title="Password" icon="lock" />
+      @if (isRegister()) {
+      <app-text-field title="Confirm Password" icon="lock" />
+      }
       <div class="flex items-center justify-between text-xs">
         <label class="flex items-center gap-2 cursor-pointer group">
           <input
@@ -39,7 +42,12 @@
       </div>
 
       <!-- Action -->
-      <app-button title="Log In" [isBorder]="false" [fullWidth]="true" />
+      <app-button
+        [title]="isRegister() ? 'Sign Up' : 'Log In'"
+        [isBorder]="false"
+        [fullWidth]="true"
+        routerLink="/home"
+      />
     </form>
 
     <!-- Divider -->
@@ -53,8 +61,12 @@
     <app-button title="Google" [fullWidth]="true" />
 
     <div class="mt-8 text-center text-xs text-neutral-500">
-      Don't have an account?
-      <app-text-button title="Sign up" />
+      {{ isRegister() ? 'Already have an account?' : 'Don\'t have an account?'
+      }}
+      <app-text-button
+        title="{{isRegister() ? 'Log In' : 'Sign Up'}}"
+        (click)="setRegister()"
+      />
     </div>
   </div>
   <!-- background image -->

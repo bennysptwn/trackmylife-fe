@@ -4,7 +4,6 @@ import { Component, input } from '@angular/core';
   selector: 'app-text-button',
   template: `
     <a
-      href="#"
       class="hover:font-medium"
       [class.text-emerald-500]="!color()"
       [style.color]="color()"

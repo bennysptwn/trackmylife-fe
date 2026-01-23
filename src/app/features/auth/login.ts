@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { Button } from '../../components/button/button';
@@ -12,4 +12,14 @@ import { TextField } from '../../components/text-field/text-field';
   imports: [CommonModule, RouterLink, Button, TextButton, Icon, TextField],
   templateUrl: './login.html',
 })
-export class Login {}
+export class Login {
+  isRegister = signal(false);
+
+  setRegister() {
+    this.isRegister.set(!this.isRegister());
+  }
+
+  submit() {
+    console.log('submit');
+  }
+}

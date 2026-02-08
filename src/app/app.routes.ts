@@ -30,6 +30,30 @@ export const routes: Routes = [
             (m) => m.Dashboard,
           ),
       },
+      {
+        path: 'task',
+        title: 'Manage Task - Track My Life',
+        loadComponent: () =>
+          import('./features/home/task/task').then((m) => m.Task),
+      },
+      {
+        path: 'money',
+        title: 'Manage Money - Track My Life',
+        loadComponent: () =>
+          import('./features/home/money/money').then((m) => m.Money),
+      },
+      {
+        path: 'growth',
+        title: 'Manage Growth - Track My Life',
+        loadComponent: () =>
+          import('./features/home/growth/growth').then((m) => m.Growth),
+      },
+      {
+        path: 'time',
+        title: 'Manage Time - Track My Life',
+        loadComponent: () =>
+          import('./features/home/time/time').then((m) => m.Time),
+      },
     ],
   },
   {

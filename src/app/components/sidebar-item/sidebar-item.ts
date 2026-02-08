@@ -1,5 +1,12 @@
-import { Component, computed, inject, input } from '@angular/core';
-import { Router, RouterLink } from '@angular/router';
+import {
+  Component,
+  computed,
+  effect,
+  inject,
+  input,
+  signal,
+} from '@angular/core';
+import { NavigationEnd, Router, RouterLink } from '@angular/router';
 import { Icon } from '../icon/icon';
 
 @Component({
@@ -44,8 +51,18 @@ export class SidebarItem {
   title = input.required<string>();
   iconName = input.required<string>();
   isExpanded = input<boolean>(true);
-  currRouter = inject(Router);
+  private router = inject(Router);
+
+  currentPath = signal(this.router.url);
   route = input.required<string>();
 
-  selected = computed(() => this.route() === this.currRouter.url);
+  selected = computed(() => this.currentPath() === this.route());
+
+  constructor() {
+    this.router.events.subscribe((event) => {
+      if (event instanceof NavigationEnd) {
+        this.currentPath.set(event.urlAfterRedirects);
+      }
+    });
+  }
 }

@@ -9,7 +9,7 @@ import { Icon } from '../icon/icon';
     <a
       class="p-2 lg:p-3 text-[#121212] {{
         selected()
-          ? 'bg-transparent lg:bg-[#E9EBEF] lg:dark:bg-[#292929] text-[#717182] dark:text-[#717182]'
+          ? 'bg-transparent lg:bg-[#E9EBEF] lg:dark:bg-[#2a2a2a] text-[#717182] dark:text-[#717182]'
           : 'text-[#717182] dark:text-[#717182]'
       }} hover:bg-transparent lg:hover:bg-[#E9EBEF] lg:dark:hover:bg-[#292929] hover:text-black dark:hover:text-white rounded-xl lg:hover:shadow-sm flex flex-col lg:flex-row gap-1 lg:gap-3 items-center transition-colors duration-200"
       [class.justify-center]="!isExpanded()"

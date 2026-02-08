@@ -1,14 +1,15 @@
 import { Routes } from '@angular/router';
-import { Landing } from './features/landing/landing';
 
 export const routes: Routes = [
   {
     path: 'landing',
-    component: Landing,
+    loadComponent: () =>
+      import('./features/landing/landing').then((m) => m.Landing),
     title: 'Track My Life',
   },
   {
     path: 'home',
+    title: 'Home - Track My Life',
     loadComponent: () => import('./features/home/home').then((m) => m.Home),
   },
   {

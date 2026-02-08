@@ -5,11 +5,12 @@ import { MenuModel } from '../../models/menu.model';
 import { Button } from '../button/button';
 import { RouterLink } from '@angular/router';
 import { Icon } from '../icon/icon';
+
 @Component({
   selector: 'app-sidebar',
   imports: [SidebarItem, Button, RouterLink, Icon],
   templateUrl: './sidebar.html',
-  styles: ``,
+  styleUrl: './sidebar.css',
 })
 export class Sidebar {
   themeService = inject(ThemeService);

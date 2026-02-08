@@ -2,12 +2,15 @@ import { Routes } from '@angular/router';
 import { canMatchLoggedIn, canMatchNotLoggedIn } from './core/auth.guard';
 
 export const routes: Routes = [
+  // When path is '' (root), check canMatchNotLoggedIn first.
+  // If user is NOT logged in, load Landing.
+  // If user IS logged in, skip this and check the next '' path.
   {
     path: '',
     canMatch: [canMatchNotLoggedIn],
     loadComponent: () =>
       import('./features/landing/landing').then((m) => m.Landing),
-    title: 'Track My Life',
+    title: 'Welcome to Track My Life',
   },
   {
     path: '',
@@ -31,9 +34,14 @@ export const routes: Routes = [
   },
   {
     path: 'auth',
+    canMatch: [canMatchLoggedIn],
+    redirectTo: '',
+  },
+  {
+    path: 'auth',
     canMatch: [canMatchNotLoggedIn],
     loadComponent: () => import('./features/auth/login').then((m) => m.Login),
-    title: 'Login - Track My Life',
+    title: 'Auth - Track My Life',
   },
   {
     path: '**',

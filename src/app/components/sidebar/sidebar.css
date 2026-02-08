@@ -1,4 +1,4 @@
-.sidebar-container {
+#sidebar-container {
     display: flex;
     flex-direction: row;
     height: 5rem;
@@ -14,14 +14,14 @@
 
 /* Mobile specific width to match w-full behavior without overriding desktop width classes */
 @media (max-width: 1023px) {
-    .sidebar-container {
+    #sidebar-container {
         width: 100%;
     }
 }
 
 /* Desktop overrides (lg:) */
 @media (min-width: 1024px) {
-    .sidebar-container {
+    #sidebar-container {
         flex-direction: column;
         /* lg:flex-col */
         height: 100vh;

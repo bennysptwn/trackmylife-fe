@@ -46,7 +46,7 @@
         [title]="isRegister() ? 'Sign Up' : 'Log In'"
         [isBorder]="false"
         [fullWidth]="true"
-        routerLink="/home"
+        (click)="submit()"
       />
     </form>
 

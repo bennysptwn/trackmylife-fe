@@ -20,7 +20,8 @@
           <app-button
             title="Start Free Trial"
             [isBorder]="false"
-            routerLink="/login"
+            routerLink="/auth"
+            [queryParams]="{ mode: 'register' }"
           />
           <app-button title="Watch Demo" />
         </div>

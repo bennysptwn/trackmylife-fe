@@ -4,8 +4,8 @@ import { RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-home',
-  imports: [Sidebar, RouterOutlet],
   templateUrl: './home.html',
   styleUrl: './home.css',
+  imports: [Sidebar, RouterOutlet],
 })
 export class Home {}

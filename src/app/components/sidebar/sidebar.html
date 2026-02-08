@@ -1,5 +1,6 @@
 <div
-  class="sidebar-container lg:dark:border-r-2 dark:border-[#292929]"
+  id="sidebar-container"
+  class="lg:dark:border-r-2 dark:border-[#292929]"
   [class.lg:w-64]="isExpanded()"
   [class.lg:w-20]="!isExpanded()"
 >
@@ -58,7 +59,7 @@
     @if (isExpanded()) {
     <p class="text-[14px]">Welcome back</p>
     <p class="font-bold">Benny Septiawan Salim</p>
-    <app-button title="Log out" [fullWidth]="true" routerLink="/" />
+    <app-button title="Log out" [fullWidth]="true" (click)="logout()" />
 
     <div
       (click)="themeService.toggleTheme()"

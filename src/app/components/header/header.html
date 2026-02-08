@@ -21,8 +21,16 @@
         title="Login"
         [isBorder]="false"
         class="font-bold lg:visible hidden"
+        routerLink="/auth"
+        [queryParams]="{ mode: 'login' }"
       />
-      <app-button title="Get Started" [isBorder]="false" class="font-bold" />
+      <app-button
+        title="Get Started"
+        [isBorder]="false"
+        class="font-bold"
+        routerLink="/auth"
+        [queryParams]="{ mode: 'register' }"
+      />
     </div>
   </div>
 </header>

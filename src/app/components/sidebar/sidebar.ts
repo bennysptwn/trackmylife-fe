@@ -1,18 +1,21 @@
 import { Component, inject, signal } from '@angular/core';
 import { ThemeService } from '../../services/theme.service';
+import { AuthService } from '../../core/auth.services';
 import { SidebarItem } from '../sidebar-item/sidebar-item';
 import { MenuModel } from '../../models/menu.model';
 import { Button } from '../button/button';
-import { RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 import { Icon } from '../icon/icon';
 
 @Component({
   selector: 'app-sidebar',
-  imports: [SidebarItem, Button, RouterLink, Icon],
+  imports: [SidebarItem, Button, Icon],
   templateUrl: './sidebar.html',
   styleUrl: './sidebar.css',
 })
 export class Sidebar {
+  authService = inject(AuthService);
+  router = inject(Router);
   themeService = inject(ThemeService);
   isExpanded = signal<boolean>(true);
 
@@ -22,8 +25,8 @@ export class Sidebar {
 
   menuData: MenuModel[] = [
     {
-      title: 'Home',
-      url: '/home',
+      title: 'Dashboard',
+      url: '/dashboard',
       icon: 'home',
     },
     {
@@ -47,4 +50,9 @@ export class Sidebar {
       icon: 'trending-up',
     },
   ];
+
+  logout() {
+    this.authService.logout();
+    this.router.navigate(['/auth']);
+  }
 }

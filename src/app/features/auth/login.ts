@@ -1,6 +1,7 @@
-import { Component, signal } from '@angular/core';
+import { Component, inject, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { AuthService } from '../../core/auth.services';
 import { Button } from '../../components/button/button';
 import { TextButton } from '../../components/text-button/text-button';
 import { Icon } from '../../components/icon/icon';
@@ -13,13 +14,27 @@ import { TextField } from '../../components/text-field/text-field';
   templateUrl: './login.html',
 })
 export class Login {
+  authService = inject(AuthService);
+  router = inject(Router);
+  route = inject(ActivatedRoute);
   isRegister = signal(false);
 
+  constructor() {
+    this.route.queryParams.subscribe((params) => {
+      this.isRegister.set(params['mode'] === 'register');
+    });
+  }
+
   setRegister() {
-    this.isRegister.set(!this.isRegister());
+    this.router.navigate([], {
+      relativeTo: this.route,
+      queryParams: { mode: this.isRegister() ? 'login' : 'register' },
+      queryParamsHandling: 'merge',
+    });
   }
 
   submit() {
-    console.log('submit');
+    this.authService.login();
+    this.router.navigate(['/']);
   }
 }

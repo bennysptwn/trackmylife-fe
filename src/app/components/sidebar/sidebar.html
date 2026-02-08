@@ -59,7 +59,12 @@
     @if (isExpanded()) {
     <p class="text-[14px]">Welcome back</p>
     <p class="font-bold">Benny Septiawan Salim</p>
-    <app-button title="Log out" [fullWidth]="true" (click)="logout()" />
+    <app-button
+      title="Log out"
+      [fullWidth]="true"
+      (click)="logout()"
+      [isWarning]="true"
+    />
 
     <div
       (click)="themeService.toggleTheme()"

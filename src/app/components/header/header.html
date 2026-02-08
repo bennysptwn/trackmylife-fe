@@ -17,13 +17,7 @@
         <app-icon name="moon" class="w-6 h-6 text-slate-700" size="24" />
         }
       </button>
-      <app-button
-        title="Login"
-        [isBorder]="false"
-        class="font-bold lg:visible hidden"
-        routerLink="/auth"
-        [queryParams]="{ mode: 'login' }"
-      />
+      @if (!authService.isLoggedIn()) {
       <app-button
         title="Get Started"
         [isBorder]="false"
@@ -31,6 +25,15 @@
         routerLink="/auth"
         [queryParams]="{ mode: 'register' }"
       />
+      } @else {
+      <app-button
+        title="Log out"
+        [isBorder]="false"
+        class="font-bold"
+        (click)="authService.logout()"
+        [isWarning]="true"
+      />
+      }
     </div>
   </div>
 </header>

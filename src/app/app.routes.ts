@@ -32,11 +32,6 @@ export const routes: Routes = [
       },
     ],
   },
-  // {
-  //   path: 'auth',
-  //   canMatch: [canMatchLoggedIn],
-  //   redirectTo: '',
-  // },
   {
     path: 'auth',
     canMatch: [canMatchNotLoggedIn],

@@ -3,6 +3,7 @@ import { Button } from '../button/button';
 import { ThemeService } from '../../services/theme.service';
 import { Icon } from '../icon/icon';
 import { RouterLink } from '@angular/router';
+import { AuthService } from '../../core/auth.services';
 
 @Component({
   selector: 'app-header',
@@ -12,4 +13,5 @@ import { RouterLink } from '@angular/router';
 })
 export class Header {
   themeService = inject(ThemeService);
+  authService = inject(AuthService);
 }

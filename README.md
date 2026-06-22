@@ -1,59 +1,41 @@
-# TrackmylifeFe
+# Track My Life
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.0.1.
+Welcome to **Track My Life**—your all-in-one life management tool. 
 
-## Development server
+Have you ever felt like there are simply too many things to keep track of? From managing your budget to planning your days, keeping tabs on your tasks, and ensuring you're continuously growing—it's a lot to juggle. That's where **Track My Life** comes in. Our mission is to seamlessly integrate the core pillars of your life into one unified, intuitive platform, freeing you up to focus on what truly matters: living your best life.
 
-To start a local development server, run:
+## The Journey
 
-```bash
-ng serve
-```
+We're building this tool step by step, focusing on delivering deep value in each specific area of life management. 
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+### Development Phase 1: Money Management (In Progress 🚀)
+Our first step is helping you gain total control over your finances. This phase focuses on tracking your income and expenses, budgeting intelligently, and offering insights so you can make informed financial decisions without the stress.
 
-## Code scaffolding
+### What's Next?
+As we grow, **Track My Life** will expand to encompass even more of your daily needs:
+- **Task Management**: Streamlining your to-dos, so nothing falls through the cracks.
+- **Time Management**: Helping you allocate your most precious resource effectively.
+- **Growth Management**: Setting, tracking, and achieving your personal and professional goals.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+## How You Can Use It (PWA)
 
-```bash
-ng generate component component-name
-```
+**Track My Life** is being developed as a **Progressive Web App (PWA)**. This means you'll be able to install it directly on your phone, tablet, or desktop for a fast, native-like experience right from your browser.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+While currently in development, our vision is to offer two tiers:
 
-```bash
-ng generate --help
-```
+- **Free Tier (Offline Use)**: A fully-featured offline mode. Your data stays entirely on your local device, giving you complete privacy and control without needing an internet connection.
+- **Paid Tier (Smart Insights & Sync)**: For those who want to take their life management to the next level. This premium tier unlocks **Smart Insight features** (advanced analytics, patterns, and recommendations) and securely **syncs your data** to your cloud account so you can access it seamlessly across all your devices.
 
-## Building
+## Development Changelog
 
-To build the project run:
+### Phase 1: Money Management (Current)
+We are currently focusing entirely on building the **Money Management** module first. This foundational phase will ensure you have a robust tool for tracking expenses, managing income, and budgeting effectively before we move on to other features.
 
-```bash
-ng build
-```
+- **[In Progress]** Setting up core project structure.
+- **[In Progress]** Designing UI/UX for the finance dashboard.
+- **[In Progress]** Expense and income tracking features.
+- **[In Progress]** Budgeting tools and visualizations.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+---
 
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+*Stay tuned as we continue to build the ultimate tool for navigating life's journey!*
